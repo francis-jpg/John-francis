@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            float: left;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .parts-selection, .maintenance-services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .part-card, .service-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            box-sizing: border-box;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .part-card img, .service-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .part-card h3, .service-card h3 {
+            color: #333;
+        }
+        .part-card p, .service-card p {
+            color: #555;
+        }
+        .part-card:hover, .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Motor Shop</h1>
+    <p>Maintenance Your Services.</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#parts">Parts</a>
+    <a href="#maintenance">Maintenance</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+    <section id="home">
+        <h2 class="section-title">Welcome to Our Motor Shop!</h2>
+        
+    </section>
+
+    <section id="parts">
+        <h2 class="section-title">Motor Parts Selection</h2>
+        <div class="parts-selection">
+            <div class="part-card">
+                
+                <h3>Engine</h3>
+                <p>High-performance engine for your motorcycle.</p>
+                <p class="price">₱12,500.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Frame</h3>
+                <p>Sturdy and durable frame for maximum support.</p>
+                <p class="price">₱8,000.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Wheels</h3>
+                <p>Premium wheels for smooth and stable rides.</p>
+                <p class="price">₱4,000.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Handlebars</h3>
+                <p>Comfortable handlebars for easy control.</p>
+                <p class="price">₱2,500.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Suspension</h3>
+                <p>Quality suspension for a smooth ride on any terrain.</p>
+                <p class="price">₱4,000.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Fuel Tank</h3>
+                <p>Reliable fuel tank for long-distance riding.</p>
+                <p class="price">₱3,000.00</p>
+            </div>
+            <div class="part-card">
+            
+                <h3>Battery</h3>
+                <p>Powerful battery for long-lasting performance.</p>
+                <p class="price">₱3,500.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Brakes Lever </h3>
+                <p>Efficient brakes for quick and smooth stopping.</p>
+                <p class="price">₱2,200.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Exhaust</h3>
+                <p>High-performance exhaust for better engine efficiency.</p>
+                <p class="price">₱7,000.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Pulley Set</h3>
+                <p>Durable chain or belt for smooth transmission.</p>
+                <p class="price">₱2,000.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Headlight</h3>
+                <p>Bright and powerful headlight for clear visibility.</p>
+                <p class="price">₱2,500.00</p>
+            </div>
+            <div class="part-card">
+                
+                <h3>Tail Light</h3>
+                <p>Clear and visible tail light for safety.</p>
+                <p class="price">₱3,200.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="maintenance">
+        <h2 class="section-title">Motor Maintenance Services</h2>
+        <div class="maintenance-services">
+            <div class="service-card">
+                <h3>Change Oil</h3>
+                <p>Replace your motor oil for better engine performance.</p>
+                <p class="price">₱850.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Check/Replace Air Filter</h3>
+                <p>Keep the engine running smoothly with a clean air filter.</p>
+                <p class="price">₱550.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Clean/Replace Spark Plugs</h3>
+                <p>Ensure your engine starts easily and runs efficiently.</p>
+                <p class="price">₱550.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Check/Replace Brake Pads</h3>
+                <p>Maintain safe stopping power with fresh brake pads.</p>
+                <p class="price">₱2,200.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Check Tire Pressure and Tread</h3>
+                <p>Ensure proper tire performance and safety.</p>
+                <p class="price">₱250.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Lubricate Chain</h3>
+                <p>Keep your chain running smoothly for better performance.</p>
+                <p class="price">₱250.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Check/Replace Battery</h3>
+                <p>Ensure your battery is charged and working efficiently.</p>
+                <p class="price">₱600.00</p>
+            </div>
+            <div class="service-card">
+                <h3>Flush and Replace Coolant</h3>
+                <p>Keep your engine running cool with fresh coolant.</p>
+                <p class="price">₱2,000.00</p>
+            </div>
+        </div>
+        <section id="Contact">
+        <h3>Please contact our shop. "09123456879"</h3>
+        <p>"09123456879"</p>
+    </section>
+</div>
+
+<footer class="footer">
+    <p>&copy; 2025 Motor Shop. All parts of your service are good.</p>
+</footer>
+
+</body>
+</html>

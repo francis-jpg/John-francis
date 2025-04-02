@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color:#4e2491;
+        }
+
+        .login-container {
+            background-color: #c281f8;
+            padding: 80px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(206, 23, 23, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5%;
+            background-color: #000000;
+            border: none;
+            border-radius: 88px;
+            color: rgb(228, 191, 191);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #884040;
+        }
+
+        .error {
+            color: black;
+            font-size: 12px;
+        }
+
+        .disabled {
+            background-color: #494bce;
+            cursor: not-allowed;
+        }
+
+        .reset-message {
+            color: rgb(143, 14, 14);
+            font-size: 14px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <input type="text" id="username" placeholder="Username" required />
+                <div id="usernameError" class="error"></div>
+            </div>
+            <div>
+                <input type="password" id="password" placeholder="Password" required />
+                <div id="passwordError" class="error"></div>
+            </div>
+            <button type="submit" id="loginButton">Log In</button>
+            <div id="resetMessage" class="reset-message">Please wait 10 seconds before trying again.</div>
+        </div>
+
+    
+</body>
+<script>
+    let attemptCount = 0;
+    let isLocked = false;
+
+    const correctUsername = "JohnFrancis15";
+    const correctPassword = "12345678";
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("usernameError").textContent = '';
+        document.getElementById("passwordError").textContent = '';
+        document.getElementById("resetMessage").style.display = 'none';
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        let isValid = true;
+
+        if (username === "") {
+            document.getElementById("usernameError").textContent = "Username is required";
+            isValid = false;
+        }
+
+        if (password === "") {
+            document.getElementById("passwordError").textContent = "Password is required";
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        
+        if (isLocked) {
+            document.getElementById("resetMessage").style.display = 'block';
+            return;
+        }
+
+      
+        if (username !== correctUsername || password !== correctPassword) {
+            attemptCount++;
+               
+            if (attemptCount >= 0) {
+                isLocked = true;
+                document.getElementById("resetMessage").style.display = 'block';
+                document.getElementById("loginButton").classList.add("disabled");
+
+                
+                setTimeout(function() {
+                    isLocked = false;
+                    document.getElementById("resetMessage").style.display = 'none';
+                    document.getElementById("loginButton").classList.remove("disabled");
+                    attemptCount = 0;
+                }, 10000);  
+            } else {
+                alert(`Invalid username or password. Attempt ${attemptCount} of 3.`);
+            }
+        } else {
+            
+            alert("Login successful! Redirecting...");
+            window.location.href = "LD1FINALS.html";  
+        }
+    });
+            </script>
+         
+            
+
+</html>
